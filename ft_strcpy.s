@@ -14,5 +14,7 @@ loop:
     jmp loop
 
 return:
+    mov dl, BYTE [rsi + rax]
+    mov BYTE [rdi + rax], dl
     mov rax, rdi
     ret

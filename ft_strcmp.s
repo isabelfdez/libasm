@@ -20,11 +20,11 @@ check:
     jmp loop
 
 return2:
-    mov rax, -1
+    mov rax, 1
     ret
 
 return1:
-    mov rax, 1
+    mov rax, -1
     ret
 
 return0:

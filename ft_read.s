@@ -1,18 +1,20 @@
 section .text
 
-global		_ft_read
+global			_ft_read
 	extern 		___error
 
 _ft_read:
 	mov			rax, 0x2000003
 	syscall
 	jc			_error
-	ret
+	jmp     	_exit
 
 _error:
-  mov     rdx, rax
-  call    ___error
-  mov     [rax], rdx
-  mov     rax, -1
-  ret
-  
+  	mov			r15, rax
+ 	call		___error
+  	mov			[rax], r15
+  	mov			rax, -1
+ 	ret
+
+_exit:
+	ret
